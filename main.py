@@ -6,6 +6,9 @@ import json
 import sys
 import requests
 import time
+from keep_alive import keep_alive
+
+keep_alive()
 
 authtoken = os.environ["authtoken"]
 useragent = os.environ["useragent"]
