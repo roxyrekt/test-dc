@@ -168,6 +168,12 @@ async def connect_websocket():
         except websockets.exceptions.ConnectionClosedOK as e:
             print(f"WebSocket bağlantısı kapandı. Hata: {e}")
             restart_program()
+        except requests.exceptions.ConnectionError as e:
+            print(f"Bağlantı Hatası: {e}")
+            # Programın uygun bir şekilde davranması için gerekli işlemleri burada gerçekleştirin.
+            # Örneğin, programı yeniden başlatabilir veya başka bir strateji uygulayabilirsiniz.
+            restart_program()
+
 
 def restart_program():
     print("Program yeniden başlatılıyor...")
