@@ -165,6 +165,9 @@ async def connect_websocket():
         except websockets.exceptions.InvalidStatusCode as e:
             print(f"WebSocket bağlantısı reddedildi. Hata: {e}")
             restart_program()
+        except websockets.exceptions.ConnectionClosedOK as e:
+            print(f"WebSocket bağlantısı kapandı. Hata: {e}")
+            restart_program()
 
 def restart_program():
     print("Program yeniden başlatılıyor...")
