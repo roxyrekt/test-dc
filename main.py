@@ -1,4 +1,3 @@
-import capsolver
 import os
 import asyncio
 import websockets
@@ -14,15 +13,10 @@ authtoken = os.environ["authtoken"]
 useragent = os.environ["useragent"]
 api_key = os.environ["captchakey"]
 
-capsolver.api_key = api_key
-
 url_get_balance = "https://api.capsolver.com/getBalance"
 url_create_task = "https://api.capsolver.com/createTask"
 url_get_task_result = "https://api.capsolver.com/getTaskResult"
 url_solve_captcha = "https://api.capsolver.com/solveCaptcha"
-
-getbalance = capsolver.balance()
-print(f"Capsolver bakiye: {getbalance.get('balance')}")
 
 async def on_message(websocket, message):
     global balance_value
@@ -120,8 +114,6 @@ async def on_message(websocket, message):
                                 response_rustmagic = requests.post(url_rustmagic, headers=headers_rustmagic, json=data_rustmagic)
 
                                 print(response_rustmagic.json()['message'])
-                                getbalance = capsolver.balance()
-                                print(f"Capsolver bakiye: {getbalance.get('balance')}")
                                 break
                             elif status_data["status"] == "error":
                                 # Görevde bir hata oluştu
