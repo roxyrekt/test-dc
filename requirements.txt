@@ -1,4 +1,3 @@
-capsolver
 asyncio
 websockets
 discord_webhook
