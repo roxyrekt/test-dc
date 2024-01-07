@@ -1,4 +1,3 @@
-os
 asyncio
 websockets
 discord_webhook
