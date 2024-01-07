@@ -1,5 +1,4 @@
 asyncio
 websockets
 discord_webhook
-time
 sys
