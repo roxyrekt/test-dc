@@ -162,6 +162,9 @@ async def connect_websocket():
             print(f"Bağlantı Hatası: {e}")
             restart_program()
             await on_error(e)
+        except websockets.exceptions.InvalidStatusCode as e:
+            print(f"WebSocket bağlantısı reddedildi. Hata: {e}")
+            restart_program()
 
 def restart_program():
     print("Program yeniden başlatılıyor...")
