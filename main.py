@@ -166,8 +166,6 @@ async def on_message(websocket, message):
 
                                                 print(response_rustmagic.json()['message'])
                                                 break
-                                            elif status_data["status"] == "failed":
-                                                print("Görev başarısız oldu. Yeniden HCaptcha çözüm yapılıyor...")
                                         else:
                                             print("Durum sorgulama başarısız oldu. HTTP Hata Kodu:", get_task_result_response.status_code)
                                             break
